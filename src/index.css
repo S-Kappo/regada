@@ -37,6 +37,7 @@ background-color: #c4e6fa;
 font-size: 14px;
 }
 
+
 .prva_tabulka {
 width: 583px;
 font-size: 11px;
@@ -169,6 +170,10 @@ height: 10px;
   margin-bottom: 20px;
 }
 
-.zakaz {
+.nemozes {
   background-color: red;
+}
+
+.zmen {
+  background-color: green;
 }
