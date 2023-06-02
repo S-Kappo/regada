@@ -1,179 +1,271 @@
 html {
--webkit-print-color-adjust: exact;
-}
-
-body {
-font-family: "Arial";
-font-size: 13px;
-}
-
-
-table {
-border-collapse: collapse;
-}
-
-table {
-border: 2px solid;
-}
-
-td,
-th {
-min-width: 11px;
-border: 1px solid;
-text-align: center;
-height: 30px;
-}
-
-thead {
-background-color: #c4e6fa;
-color: #000;
-}
-
-#objednavaci_kod {
-width: 800px;
-margin-bottom: 20px;
-font-weight: bold;
-background-color: #c4e6fa;
-font-size: 14px;
-}
-
-
-.prva_tabulka {
-width: 583px;
-font-size: 11px;
-margin-bottom: 20px;
-}
-
-#order_code_label {
-width: 500px;
-text-align: start;
-margin-left: 5px;
-border: 0;
-}
-
-#kod {
-border: 0;
-}
-
-.mala_tab {
-height: 10px;
-}
-
-.obalena_tab1 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.stisknute, .stisknute:hover  {
-  background-color: #a1cac7
-}
-
-.nestisknute {
-  background-color: white
-}
-
-/* .policka:hover {
-  background-color: aquamarine;
-} */
-
-#objednavaci_kod {
-  margin-top: 20px;
+  -webkit-print-color-adjust: exact;
+  }
+  
+  body {
+  font-family: "Arial";
+  font-size: 13px;
+  }
+  
+  
+  table {
+  border-collapse: collapse;
+  }
+  
+  table {
+  border: 2px solid;
+  }
+  
+  td,
+  th {
+  min-width: 11px;
+  border: 1px solid;
+  text-align: center;
+  height: 30px;
+  }
+  
+  thead {
+  background-color: #c4e6fa;
+  color: #000;
+  }
+  
+  #objednavaci_kod {
   width: 800px;
   margin-bottom: 20px;
   font-weight: bold;
   background-color: #c4e6fa;
   font-size: 14px;
+  }
+  
+  
+  .prva_tabulka {
+  width: 583px;
+  font-size: 11px;
+  margin-bottom: 20px;
+  }
+  
+  #order_code_label {
+  width: 500px;
+  text-align: start;
+  margin-left: 5px;
+  border: 0;
+  }
+  
+  #kod {
+  border: 0;
+  }
+  
+  .mala_tab {
+  height: 10px;
+  }
+  
+  .obalena_tab1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .stisknute, .stisknute:hover  {
+    background-color: #a1cac7
+  }
+  
+  .nestisknute {
+    background-color: white
+  }
+  
+  /* .policka:hover {
+    background-color: aquamarine;
+  } */
+  
+  #objednavaci_kod {
+    margin-top: 20px;
+    width: 800px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background-color: #c4e6fa;
+    font-size: 14px;
+  }
+  
+  .centrovak {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tmavo_modry_obdlznik {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    height: 36px;
+    background-color: #142e6b;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+  
+  .biely_text {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .hlavny_obrazok {
+    height: 160px;
+  }
+  
+  .uvod {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .SK-text {
+    margin-left: 25px;
+  }
+  
+  .SK-nadpis {
+    margin-left: 25px
+  }
+  
+  .last_element {
+    width: 22px
+  }
+  
+  .druha_tabulka {
+    width: 629px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .tretia_tabulka {
+    width: 660px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .stvrta_tabulka {
+    width: 690px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .piata_tabulka {
+    width: 720px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  #druha_strana {
+    padding-top: 10px;
+  }
+  
+  .siesta_tabulka {
+    width: 750px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .siedma_tabulka {
+    width: 780px;
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .nemozes {
+    background-color: red;
+  }
+  
+  .zmen {
+    background-color: green;
+  }
+
+
+/* CSS */
+.button-51 {
+  background-color: transparent;
+  border: 1px solid #266DB6;
+  box-sizing: border-box;
+  color: #00132C;
+  font-family: "Avenir Next LT W01 Bold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.centrovak {
+.button-51:hover,
+.button-51:active {
+  outline: 0;
+}
+
+.button-51:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-51:before {
+  background-color: #D5EDF6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.button-51:hover:before {
+  background-color: #6DCFF6;
+}
+
+@media (min-width: 768px) {
+  .button-51 {
+    padding: 16px 32px;
+    margin-right: 18px;
+  }
+}
+
+.buttony {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.tmavo_modry_obdlznik {
+.input-wrapper {
+  width: 40%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px #ddd;
+  background-color: white;
   display: flex;
-  justify-content: space-between;
-  width: 750px;
-  height: 36px;
-  background-color: #142e6b;
-  border-radius: 6px;
-  margin-top: 20px;
+  align-items: center;
 }
 
-.biely_text {
-  color: white;
-  font-size: 16px;
-  margin-right: 10px;
-  margin-left: 10px;
+input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-left: 5px;
 }
 
-.hlavny_obrazok {
-  height: 160px;
+input:focus {
+  outline: none;
 }
 
-.uvod {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
+#search-icon {
+  color: royalblue;
 }
 
-.SK-text {
-  margin-left: 25px;
-}
-
-.SK-nadpis {
-  margin-left: 25px
-}
-
-.last_element {
-  width: 22px
-}
-
-.druha_tabulka {
-  width: 629px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-.tretia_tabulka {
-  width: 660px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-.stvrta_tabulka {
-  width: 690px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-.piata_tabulka {
-  width: 720px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-#druha_strana {
-  padding-top: 10px;
-}
-
-.siesta_tabulka {
-  width: 750px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-.siedma_tabulka {
-  width: 780px;
-  font-size: 11px;
-  margin-bottom: 20px;
-}
-
-.nemozes {
-  background-color: red;
-}
-
-.zmen {
-  background-color: green;
+.desifrovac {
+  font-size: 1.25rem;
 }
