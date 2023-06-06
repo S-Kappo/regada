@@ -2,22 +2,57 @@ import { useState } from "react";
 
 const meno = "S0 2";
 const kod = "062";
-const nazvy1 = ["Typ klímy", "Okolitá teplota", "Korózna kategória", "Krytie"];
+const nazvy1 = ["Typ klímy ", "Okolitá teplota", "Korózna kategória", "Krytie"];
 const hodnoty1 = [
   {
     typ_klimy: "Mierna /Standard/",
-    okolita_teplota: "-20°C ... +60°C",
+    okolita_teplota: "-25°C ... +55°C",
     korozna_kategoria: "C3",
-    krytie: "IP 65",
-    cislo: "0",
+    krytie: "IP 67",
+    cislo: "1",
+  },
+  {
+    typ_klimy: "Mierna /Standard/",
+    okolita_teplota: "-25°C ... +55°C",
+    korozna_kategoria: "C3",
+    krytie: "IP 68",
+    cislo: "5",
   },
 
   {
-    typ_klimy: "Tropická suchá a suchá /Tropics and Dry/",
-    okolita_teplota: "-20°C ... +60°C",
+    typ_klimy: "Tropická vlhká + ČOV /Tropics and Wet/",
+    okolita_teplota: "-25°C ... +55°C",
+    korozna_kategoria: "C4",
+    krytie: "IP 67",
+    cislo: "2",
+  },
+  {
+    typ_klimy: "Chladná /Cold/",
+    okolita_teplota: "-40°C ... +40°C",
     korozna_kategoria: "C3",
-    krytie: "IP 65",
+    krytie: "IP 67",
+    cislo: "3",
+  },
+  {
+    typ_klimy: "Tropická suchá a suchá /Tropical dry and Dry/",
+    okolita_teplota: "-25°C ... +55°C",
+    korozna_kategoria: "C3",
+    krytie: "IP 67",
     cislo: "6",
+  },
+  {
+    typ_klimy: "Morská /Sea/",
+    okolita_teplota: "-50°C ... +40°C",
+    korozna_kategoria: "C4",
+    krytie: "IP 67",
+    cislo: "7",
+  },
+  {
+    typ_klimy: "Arktická /Arctic/",
+    okolita_teplota: "-60°C ... +40°C",
+    korozna_kategoria: "C3",
+    krytie: "IP 67",
+    cislo: "8",
   },
 ];
 
@@ -28,57 +63,342 @@ const nazvy2 = [
 ];
 const hodnoty2 = [
   {
-    elektricke_pripojenie: "Vyvedené káble dĺžky 1 m",
+    elektricke_pripojenie: "Na svorkovnicu",
     napatie: "230 V AC",
-    schema: "Z594b, Z594c",
+    schema: "Z404p",
     cislo: "0",
   },
 
   {
-    elektricke_pripojenie: "Vyvedené káble dĺžky 1 m",
+    elektricke_pripojenie: "Na svorkovnicu",
     napatie: "220 V AC",
-    schema: "Z594b, Z594c",
+    schema: "Z404p",
     cislo: "L",
   },
 
   {
-    elektricke_pripojenie: "Vyvedené káble dĺžky 1 m",
+    elektricke_pripojenie: "Na svorkovnicu",
+    napatie: "3x400 V AC",
+    schema: "Z78j",
+    cislo: "1",
+  },
+  {
+    elektricke_pripojenie: "Na svorkovnicu",
+    napatie: "3x380 V AC",
+    schema: "Z78j",
+    cislo: "M",
+  },
+  {
+    elektricke_pripojenie: "Na svorkovnicu",
     napatie: "24 V AC",
-    schema: "Z594, Z594a",
+    schema: "Z507a, Z506a",
     cislo: "3",
+  },
+  {
+    elektricke_pripojenie: "Na svorkovnicu",
+    napatie: "24 V AC",
+    schema: "Z503a, Z502a",
+    cislo: "A",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "230 V AC",
+    schema: "Z404p",
+    cislo: "5",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "220 V AC",
+    schema: "Z404p",
+    cislo: "P",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "3x400 V AC",
+    schema: "Z78j",
+    cislo: "7",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "3x380 V AC",
+    schema: "Z78j",
+    cislo: "R",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "24 V AC",
+    schema: "Z507a, Z506a",
+    cislo: "8",
+  },
+  {
+    elektricke_pripojenie: "Na konektor",
+    napatie: "24 V DC",
+    schema: "Z503a, Z502a",
+    cislo: "C",
   },
 ];
 
 const nazvy3 = [
-  "Max. zaťažovací moment",
-  "Doba prestavenia 50 Hz",
-  "Doba prestavenia 60 Hz",
+  "Vypínací moment",
+  "Max. zataž. moment",
+  "Vypínací moment",
+  "Max. zataž. moment",
+  "Vypínací moment",
+  "Max. zataž. moment",
+  "Rýchlosť prestavenia",
 ];
 const hodnoty3 = [
   {
-    moment: "8 Nm",
-    doba1: "120 s/90°",
-    doba2: "100 s/90°",
-    cislo: "1",
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "7.5 - 12 Nm",
+    max3: "10 Nm",
+    rychlost: "40 min-1",
+    cislo: "U",
   },
-];
-
-const nazvy4 = ["Dorazy", "Pracovný uhol"];
-const hodnoty4 = [
   {
-    dorazy: "Bez dorazov",
-    uhol: "60°",
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "7.5 - 12 Nm",
+    max3: "10 Nm",
+    rychlost: "20 min-1",
+    cislo: "V",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "7.5 - 12 Nm",
+    max3: "10 Nm",
+    rychlost: "12.5 min-1",
+    cislo: "W",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "7.5 - 12 Nm",
+    max3: "10 Nm",
+    rychlost: "10 min-1",
+    cislo: "Y",
+  },
+  {
+    vp1: "7.5 - 12 Nm",
+    max1: "10 Nm",
+    vp2: "7.5 ÷ 12 Nm",
+    max2: "10 Nm",
+    vp3: "12 - 20 Nm",
+    max3: "17 Nm",
+    rychlost: "40 min-1",
     cislo: "A",
   },
   {
-    dorazy: "Bez dorazov",
-    uhol: "90°",
+    vp1: "7.5 - 12 Nm",
+    max1: "10 Nm",
+    vp2: "7.5 ÷ 12 Nm",
+    max2: "10 Nm",
+    vp3: "12 - 20 Nm",
+    max3: "17 Nm",
+    rychlost: "20 min-1",
+    cislo: "5",
+  },
+  {
+    vp1: "7.5 - 12 Nm",
+    max1: "10 Nm",
+    vp2: "7.5 ÷ 12 Nm",
+    max2: "10 Nm",
+    vp3: "12 - 20 Nm",
+    max3: "17 Nm",
+    rychlost: "12.5 min-1",
+    cislo: "6",
+  },
+  {
+    vp1: "7.5 - 12 Nm",
+    max1: "10 Nm",
+    vp2: "7.5 ÷ 12 Nm",
+    max2: "10 Nm",
+    vp3: "12 - 20 Nm",
+    max3: "17 Nm",
+    rychlost: "10 min-1",
+    cislo: "7",
+  },
+  {
+    vp1: "15 - 25 Nm",
+    max1: "21 Nm",
+    vp2: "15 - 25 Nm",
+    max2: "21 Nm",
+    vp3: "24 - 40 Nm",
+    max3: "34 Nm",
+    rychlost: "20 min-1",
     cislo: "B",
   },
   {
-    dorazy: "Bez dorazov",
-    uhol: "120°",
+    vp1: "15 - 25 Nm",
+    max1: "21 Nm",
+    vp2: "15 - 25 Nm",
+    max2: "21 Nm",
+    vp3: "24 - 40 Nm",
+    max3: "34 Nm",
+    rychlost: "20 min-1",
+    cislo: "8",
+  },
+  {
+    vp1: "15 - 25 Nm",
+    max1: "21 Nm",
+    vp2: "15 - 25 Nm",
+    max2: "21 Nm",
+    vp3: "24 - 40 Nm",
+    max3: "34 Nm",
+    rychlost: "20 min-1",
+    cislo: "9",
+  },
+  {
+    vp1: "24 - 40 Nm",
+    max1: "34 Nm",
+    vp2: "24 - 40 Nm",
+    max2: "34 Nm",
+    vp3: "36 - 60 Nm",
+    max3: "50 Nm",
+    rychlost: "12.5 min-1",
     cislo: "C",
+  },
+  {
+    vp1: "24 - 40 Nm",
+    max1: "34 Nm",
+    vp2: "24 - 40 Nm",
+    max2: "34 Nm",
+    vp3: "36 - 60 Nm",
+    max3: "50 Nm",
+    rychlost: "10 min-1",
+    cislo: "Z",
+  },
+  {
+    vp1: "30 - 50 Nm",
+    max1: "42 Nm",
+    vp2: "30 - 50 Nm",
+    max2: "42 Nm",
+    vp3: "48 - 80 Nm",
+    max3: "68 Nm",
+    rychlost: "10 min-1",
+    cislo: "D",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "24 - 40 Nm",
+    max2: "34 Nm",
+    vp3: "-",
+    max3: "-",
+    rychlost: "20 min-1",
+    cislo: "L",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "36 - 60 Nm",
+    max2: "50 Nm",
+    vp3: "-",
+    max3: "-",
+    rychlost: "12.5 min-1",
+    cislo: "M",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "48 - 80 Nm",
+    max2: "68 Nm",
+    vp3: "-",
+    max3: "-",
+    rychlost: "10 min-1",
+    cislo: "N",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "36 - 60 Nm",
+    max3: "50 Nm",
+    rychlost: "40 min-1",
+    cislo: "R",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "48 - 80 Nm",
+    max3: "68 Nm",
+    rychlost: "40 min-1",
+    cislo: "P",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "24 - 40 Nm",
+    max3: "34 Nm",
+    rychlost: "40 min-1",
+    cislo: "S",
+  },
+  {
+    vp1: "-",
+    max1: "-",
+    vp2: "-",
+    max2: "-",
+    vp3: "36 - 60 Nm",
+    max3: "50 Nm",
+    rychlost: "20 min-1",
+    cislo: "E",
+  },
+];
+
+const nazvy4 = [
+  "Vyhotovenie ovládacej dosky",
+  "Spínače",
+  "Bez vysielača",
+  "S odporovým vysielačom",
+  "Schéma zapojenia",
+];
+const hodnoty4 = [
+  {
+    doska: "-",
+    spinac: "S1/S2, S3/S4, S5/S6",
+    vysielac: "0.5 ÷ 330",
+    odpor: "0.84;1.5; 2.8; 5; 9; 16; 30; 55; 0.5 ÷ 330 100; 180; 330",
+    schema: "Z403b",
+    cislo: "1",
+  },
+  {
+    doska: "-",
+    spinac: "S1/S2, S3/S4,s tandem. spínačmi",
+    vysielac: "0.5 ÷ 330",
+    odpor: "0.84;1.5; 2.8; 5; 9; 16; 30; 55; 0.5 ÷ 330 100; 180; 330",
+    schema: "Z461a",
+    cislo: "K",
+  },
+  {
+    doska: "-",
+    spinac: "S1/S2, S3/S4, S5/S6",
+    vysielac: "0.5 ÷ 330",
+    odpor: "0.84;1.5; 2.8; 5; 9; 16; 30; 55; 0.5 ÷ 330 100; 180; 330",
+    schema: "Z412r, Z505a, Z509a",
+    cislo: "5",
+  },
+  {
+    doska: "-",
+    spinac: "S1/S2, S3/S4,s tandem. spínačmi",
+    vysielac: "0.5 ÷ 330",
+    odpor: "0.84;1.5; 2.8; 5; 9; 16; 30; 55; 0.5 ÷ 330 100; 180; 330",
+    schema: "Z412f, Z504a, Z508a",
+    cislo: "U",
   },
 ];
 
@@ -92,7 +412,7 @@ const nazvy5 = [
 const hodnoty5 = [
   {
     poloha: "Bez vysielača",
-    zdroj: "-",
+    zdroj: "Bez vysielača",
     zapojenie: "-",
     vystup: "-",
     schema: "-",
@@ -100,35 +420,27 @@ const hodnoty5 = [
   },
   {
     poloha: "Odporový",
-    zdroj: "Odporový",
+    zdroj: "Jednoduchý",
     zapojenie: "-",
-    vystup: "1x100 Ω",
-    schema: "Z595",
+    vystup: "1 x 100 Ω",
+    schema: "Z5a",
     cislo: "B",
   },
   {
     poloha: "Odporový",
     zdroj: "Jednoduchý",
     zapojenie: "-",
-    vystup: "1x1000 Ω",
-    schema: "Z595",
-    cislo: "E",
-  },
-  {
-    poloha: "Odporový",
-    zdroj: "Jednoduchý",
-    zapojenie: "-",
-    vystup: "1x2000 Ω",
-    schema: "Z595",
+    vystup: "1 x 2000 Ω",
+    schema: "Z5a",
     cislo: "F",
   },
   {
-    poloha: "Elektronický - prúdový",
-    zdroj: "Bez zdroja",
-    zapojenie: "2-vodič",
-    vystup: "4 - 20 mA",
-    schema: "Z595a",
-    cislo: "S",
+    poloha: "Odporový",
+    zdroj: "Dvojitý",
+    zapojenie: "-",
+    vystup: "2 x 100 Ω",
+    schema: "Z6a",
+    cislo: "K",
   },
 ];
 
@@ -141,78 +453,64 @@ const nazvy6 = [
 ];
 const hodnoty6 = [
   {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "D-9",
-    rozmer: "9x9",
-    nacrt: "P-2126",
-    cislo: "B",
-  },
-  {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "L-9",
-    rozmer: "9x9",
-    nacrt: "P-2126",
-    cislo: "T",
-  },
-  {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "D-11",
-    rozmer: "11x11",
-    nacrt: "P-2126",
+    pripojenie: "Príruba ISO 5210",
+    velkost: "F07",
+    tvar: "B3",
+    rozmer: "Ø16",
+    nacrt: "P-1377",
     cislo: "A",
   },
   {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "L-11",
-    rozmer: "11x11",
-    nacrt: "P-2126",
-    cislo: "S",
+    pripojenie: "Príruba ISO 5210",
+    velkost: "F07",
+    tvar: "B4",
+    rozmer: "Ø25",
+    nacrt: "P-1377",
+    cislo: "B",
   },
   {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "H-8",
-    rozmer: "8x13",
-    nacrt: "P-2126",
-    cislo: "M",
+    pripojenie: "Príruba ISO 5210",
+    velkost: "F07/F10(G0)",
+    tvar: "A",
+    rozmer: "Tr20x4 LH",
+    nacrt: "ISO 5210, F10-A",
+    cislo: "E",
   },
   {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "H-9",
-    rozmer: "9x14",
-    nacrt: "P-2126",
-    cislo: "G",
+    pripojenie: "Príruba ISO 5210",
+    velkost: "F07/F10(G0)",
+    tvar: "A",
+    rozmer: "Tr25x5 LH",
+    nacrt: "ISO 5210, F10-A",
+    cislo: "H",
   },
   {
-    pripojenie: "Príruba ISO 5211",
-    velkost: "F04",
-    tvar: "H-11",
-    rozmer: "11x14",
-    nacrt: "P-2126",
-    cislo: "U",
+    pripojenie: "Príruba ISO 5210",
+    velkost: "F07/F10(G0)",
+    tvar: "A",
+    rozmer: "Tr26x5 LH",
+    nacrt: "ISO 5210, F10-A",
+    cislo: "J",
   },
 ];
 
 const nazvy7 = ["Kod", "Rozšírené vybavenie", "Schéma zapojenia"];
 const hodnoty7 = [
   {
-    kod: "A",
-    vybavenie: "Nastavenie pracovného uhla na požadovanú hodnotu",
+    kod: "B",
+    vybavenie:
+      "Nastavenie vypínacieho momentu na požadovanú hodnotu /Adjustment of switch-off torque to required value/",
     schema: "-",
     cislo: "0",
-    cislo1: "1",
+    cislo1: "3",
   },
   {
-    kod: "B",
-    vybavenie: "2 prídavné polohové spínače S5, S6",
-    schema: "Z594a, Z594c",
+    kod: "C",
+    vybavenie:
+      "Nastavenie pracovných otáèok na požadovanú hodnotu /Adjustment of revolutions to required value/",
+    schema: "-",
     cislo: "0",
-    cislo1: "2",
+    cislo1: "4",
   },
   {
     vybavenie:
@@ -221,7 +519,7 @@ const hodnoty7 = [
 ];
 
 const obrazok =
-  "http://www.regada.sk/public/media/image/picture/13_bd65c7f7f726cc31702ab1b627f62fd1.jpeg";
+  "http://www.regada.sk/public/media/image/picture/13_f716c99c608cc3fc2162331c57f6ae54.jpeg";
 
 let initialCounters = ["x", "-", "x", "x", "x", "x", "x", "/", "x", "x"];
 
@@ -906,12 +1204,27 @@ const Configurator = () => {
   const [stlacene, setStlacene] = useState(initialCounters);
   const [exceptionn, setExceptionn] = useState([]);
   const [zakaz, setZakaz] = useState(["^", "^"]);
+  // const [dlzka_stlpec, setDlzka_stlpec] = useState(0);
 
   function handleClick(elem, index) {
+    if (stlacene[index] === elem) {
+      const nextCounters = stlacene.map((c, i) => {
+        if (i === index) {
+          // Increment the clicked counter
+          return "x";
+        } else {
+          // The rest haven't changed
+          return c;
+        }
+      });
+
+      setStlacene(nextCounters);
+      return 0;
+    }
+
     // Kontrola
     let docasna_array = [...stlacene];
     docasna_array[index] = elem;
-    setExceptionn([]);
     let count = 0;
 
     // hladanie zakazanej moznosti
@@ -990,7 +1303,7 @@ const Configurator = () => {
     <div className="obalena_tab1">
       <div>
         <div className="centrovak">
-          <div className="tmavo_modry_obdlznik" id="tmavo_modry_obdlznik">
+          <div className="tmavo_modry_obdlznik1" id="tmavo_modry_obdlznik">
             <h1 className="biely_text">{meno}</h1>
             <h1 className="biely_text">
               Elektrický servopohon jednootáčkový / Electric part-turn actuator
@@ -1003,21 +1316,33 @@ const Configurator = () => {
           <div className="SK-text">
             <h3 className="SK-nadpis">Štandardné vybavenie:</h3>
             <ul>
-              <li>Napájacie napätie 24 V AC, 230 V AC</li>
-              <li>Elektrické pripojenie cez vyvedené káble</li>
+              <li>Napájacie napätie 230 V AC, 3x400 V AC</li>
+              <li>Svorkovnicové pripojenie</li>
+              <li>2 momentové spínače</li>
               <li>2 polohové spínače</li>
-              <li>Mechanické pripojenie prírubové ISO 5211</li>
-              <li>Stupeň krytia IP 65</li>
+              <li>2 prídavné polohové spínače</li>
+              <li>Mechanické pripojenie - príruba F10 (ISO 5210)</li>
+              <li>Vyhrievací odpor</li>
+              <li>Tepelný spínač vyhrievacieho odporu</li>
+              <li>Miestny ukazovateľ polohy</li>
+              <li>Ručné ovládanie</li>
+              <li>Stupeň krytia IP 67</li>
             </ul>
           </div>
           <div className="SK-text">
             <h3 className="SK-nadpis">Standard equipment:</h3>
             <ul>
-              <li>Voltage 24 V AC, 230 V AC</li>
-              <li>Electrical cable connection</li>
+              <li>Voltage 230 V AC, 3x400 V AC</li>
+              <li>Terminal board connection</li>
+              <li>2 torque switches</li>
               <li>2 position switches</li>
-              <li>Mechanical connection - flange ISO 5211</li>
-              <li>Protection code IP 65</li>
+              <li>2 additional position switches</li>
+              <li>Mechanical connection - flange F10 (ISO 5210)</li>
+              <li>Space heater</li>
+              <li>Space heater's thermal switch</li>
+              <li>Local position indicator</li>
+              <li>Manual control</li>
+              <li>Protection code IP 67</li>
             </ul>
           </div>
         </div>
@@ -1036,9 +1361,7 @@ const Configurator = () => {
           </tbody>
         </table>
         <p>5-XZXXJ</p>
-        <p>1-XGXXE</p>
         <p>1-18XXH</p>
-        <p>7-8XXZ</p>
         <table className="prva_tabulka">
           <thead>
             <tr>
@@ -1147,9 +1470,13 @@ const Configurator = () => {
                       : ""
                   }
                 >
-                  <td>{hodnota.moment}</td>
-                  <td>{hodnota.doba1}</td>
-                  <td>{hodnota.doba2}</td>
+                  <td>{hodnota.vp1}</td>
+                  <td>{hodnota.max1}</td>
+                  <td>{hodnota.vp2}</td>
+                  <td>{hodnota.max2}</td>
+                  <td>{hodnota.vp3}</td>
+                  <td>{hodnota.max3}</td>
+                  <td>{hodnota.rychlost}</td>
                   <td className="last_element">{hodnota.cislo}</td>
                 </tr>
               );
@@ -1186,8 +1513,11 @@ const Configurator = () => {
                       : ""
                   }
                 >
-                  <td>{hodnota.dorazy}</td>
-                  <td>{hodnota.uhol}</td>
+                  <td>{hodnota.doska}</td>
+                  <td>{hodnota.spinac}</td>
+                  <td>{hodnota.vysielac}</td>
+                  <td>{hodnota.odpor}</td>
+                  <td>{hodnota.schema}</td>
                   <td className="last_element">{hodnota.cislo}</td>
                 </tr>
               );

@@ -100,6 +100,15 @@ html {
     border-radius: 6px;
     margin-top: 20px;
   }
+  .tmavo_modry_obdlznik1 {
+    display: flex;
+    justify-content: space-between;
+    width: 820px;
+    height: 36px;
+    background-color: #142e6b;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
   
   .biely_text {
     color: white;
@@ -171,11 +180,11 @@ html {
   }
   
   .nemozes {
-    background-color: red;
+    background-color: #393E46;
   }
   
   .zmen {
-    background-color: green;
+    background-color: #00ADB5;
   }
 
 

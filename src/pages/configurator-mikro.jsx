@@ -235,6 +235,21 @@ const Configurator = () => {
   const [zakaz, setZakaz] = useState(["^", "^"]);
 
   function handleClick(elem, index) {
+    if (stlacene[index] === elem) {
+      const nextCounters = stlacene.map((c, i) => {
+        if (i === index) {
+          // Increment the clicked counter
+          return "x";
+        } else {
+          // The rest haven't changed
+          return c;
+        }
+      });
+
+      setStlacene(nextCounters);
+      return 0;
+    }
+
     // Kontrola
     let docasna_array = [...stlacene];
     docasna_array[index] = elem;
