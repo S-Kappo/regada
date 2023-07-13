@@ -28,7 +28,7 @@ const Selector = () => {
         Dešifrovač
       </button>
       <a
-        href="https://www.figma.com/proto/mhMZPUW3voNaUdTw8oYhC5/Untitled?page-id=0%3A1&type=design&node-id=15-2&viewport=4471%2C-1205%2C1.71&scaling=scale-down&starting-point-node-id=15%3A2"
+        href="https://www.figma.com/proto/BdbsYIUJOM1wNbx9ykIoSX/konfigurator?page-id=0%3A1&type=design&node-id=8-68&viewport=1545%2C1891%2C0.5&t=tQ0NdBB2XivkjAa7-1&scaling=min-zoom&starting-point-node-id=8%3A68&mode=design"
         target="_blank"
       >
         Figma
