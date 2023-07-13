@@ -5,15 +5,12 @@ const Selector = () => {
 
   const naMikro = () => {
     navigate("/mikro");
-    window.location.reload();
   };
   const naSO2 = () => {
     navigate("/so2");
-    window.location.reload();
   };
   const naSearch = () => {
     navigate("/search");
-    window.location.reload();
   };
 
   return (
