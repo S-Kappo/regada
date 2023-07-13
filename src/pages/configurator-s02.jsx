@@ -1204,7 +1204,6 @@ const Configurator = () => {
   const [stlacene, setStlacene] = useState(initialCounters);
   const [exceptionn, setExceptionn] = useState([]);
   const [zakaz, setZakaz] = useState(["^", "^"]);
-  // const [dlzka_stlpec, setDlzka_stlpec] = useState(0);
 
   function handleClick(elem, index) {
     if (stlacene[index] === elem) {
@@ -1225,6 +1224,7 @@ const Configurator = () => {
     // Kontrola
     let docasna_array = [...stlacene];
     docasna_array[index] = elem;
+    setExceptionn([]);
     let count = 0;
 
     // hladanie zakazanej moznosti

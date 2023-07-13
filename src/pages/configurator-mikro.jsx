@@ -228,7 +228,7 @@ let initialCounters = ["x", "-", "x", "x", "x", "x", "x", "/", "x", "x"];
 const Configurator = () => {
   let zakazana_moznost = [
     ["0", "-", "L", "X", "A"],
-    //   ["6", "-", "3", "x", "C"],
+    ["6", "-", "3", "x", "C"],
   ];
   const [stlacene, setStlacene] = useState(initialCounters);
   const [exceptionn, setExceptionn] = useState([]);
